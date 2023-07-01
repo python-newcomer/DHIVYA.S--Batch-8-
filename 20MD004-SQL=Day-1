@@ -1,0 +1,17 @@
+create schema dd_dm;
+# Data definition language
+create table Fruits(
+          n_varities int primary key,
+          f_name varchar(30),
+          f_price smallint);
+#insert the datas 
+insert into Fruits values
+(1,"Mango",75),
+(2,"JackFruit",100),
+(3,"Pomegranate",50),
+(4,"Guava",40),
+(5,"Pappaya",85),
+(6,"Apple",90),
+(7,"Kiwi",800);
+#show the table
+select * from Fruits;
