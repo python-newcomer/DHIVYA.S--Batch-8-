@@ -1,0 +1,32 @@
+create schema University;
+create table Students(student_id int primary key,
+                      student_name varchar(50),
+                      student_age int,
+                      student_major varchar(50));
+#insert the records into the table
+insert into Students values
+(01,"Dhanushree",22,"Psychology"),
+(02,"Shanmathi",24,"Physiotherapy"),
+(05,"Yogasri",18,"Chemistry"),
+(06,"Zebra",19,"Physics"),
+(09,"Giraf",24,"Pathology"),
+(10,"Uvasri",21,"Gynaecology");
+#query1 write a query to retrieve all records from the Students table
+select * from Students;
+#query2 Write a query to retrieve the names of all students majoring in "Computer Science.
+select * from Students
+          Where student_major="Computer Science";
+# query3 Write a query to retrieve the details of the oldest student in the "Students" table.
+select * from Students
+          Where student_age>20;
+# query4 Write a query to update the major of a student with a specific student_id.
+update Students set student_major="CSE" Where student_id=01;    
+select * from Students;
+# query5 Write a query to delete a student with a specific student_id from the "Students" table.
+Delete from Students Where student_id=09;
+select * from Students;     
+          
+
+
+
+
