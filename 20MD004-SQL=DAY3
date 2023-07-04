@@ -33,7 +33,7 @@ create table authors(se_no int primary key,
                     author_native varchar(50),
                     author_name varchar(60),
                     s_no int,
-					constraint fk_s_no foreign key(s_no) references Books(s_no));
+		    constraint fk_s_no foreign key(s_no) references Books(s_no));
 insert into authors values
 (1,20,"Dubai","William",5),
 (2,25,"Bombay","Zombie",2),
