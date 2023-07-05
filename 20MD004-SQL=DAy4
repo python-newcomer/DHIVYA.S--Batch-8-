@@ -1,0 +1,39 @@
+create database Offer;
+#create table for purchasing the goods
+create table import_of_goods(count_ int primary key ,
+                             good_name text,
+                             price int,
+                             merchant text);
+#create table for the sales of goods
+create table customer(customer_id int primary key,
+                      customer_name text,
+					            phone_ bigint,
+                      good_name text,
+                      price int,
+                      count_ int,
+                      constraint fk_count_ foreign key(count_) references import_of_goods(count_));
+
+insert into import_of_goods values
+(1,"Chocolate",10000,"Sardar"),
+(2,"Chips",500,"Baba"),
+(3,"Cake",100,"Amir Khan"),
+(4,"Biscuits",1000,"Sultan"),
+(5,"Ragi",300,"Shahjahan");
+
+insert into customer values
+(01,"Sai",9087654321,"Cake",100,3),
+(02,"Sanjay",9085675732,"Chocolate",10000,1),
+(03,"Shivani",9537902721,"Biscuits",1000,4),
+(04,"Srikanth",8678235732,"Ragi",300,5),
+(05,"Parveen",9576091908,"Chocolate",10000,1),
+(06,"Shivani",9537902721,"Chocolate",10000,1),
+(07,"Sanjay",7856349056,"Ragi",300,5);
+#finding the top three customers who purchase large amount(cost) of goods
+select import_of_goods.count_ , customer.customer_name,customer.good_name,customer.price from customer
+inner join import_of_goods on customer.count_=import_of_goods.count_ order by price desc limit 3;
+
+
+
+
+
+
